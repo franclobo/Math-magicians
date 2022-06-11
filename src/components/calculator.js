@@ -41,8 +41,8 @@ export default function Calculator(props) {
 
       <div className="transform">
         <Buttons btnName="AC" clickEvent={(string) => update(string)} />
-        <Buttons btnName="+" clickEvent={(string) => update(string)} />
         <Buttons btnName="+/-" clickEvent={(string) => update(string)} />
+        <Buttons btnName="%" clickEvent={(string) => update(string)} />
       </div>
 
       <div className="digits">
