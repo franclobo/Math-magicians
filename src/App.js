@@ -1,7 +1,7 @@
-import calculator from './components/calculator';
+import Calculator from './components/calculator';
 
 function App() {
-  return calculator();
+  return <Calculator previous="" operand="" current="0" solved={false} />;
 }
 
 export default App;

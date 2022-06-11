@@ -20,7 +20,21 @@ By building this application, I will learn how to use React.
 
 ## Live Demo
 
-[Math magicians](#)<br>
+[Math magicians](https://franclobo.github.io/Math-magicians/public/)<br>
+
+## Installation
+
+Clone this repository (you must have [Git Installed](https://github.com/git-guides/install-git))
+
+`git clone git@github.com:franclobo/Math-magicians.git`
+
+To install dependencies run
+
+`npm install`
+
+Then you can start the server and preview the application using
+
+`npm start`
 
 ## Author
 
