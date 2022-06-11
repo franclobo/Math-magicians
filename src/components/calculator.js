@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import calculate from '../logic/caculate';
 
 function Buttons(props) {
-  const { className, btnName } = props;
-
-  const clickEvent = (props) => {
+  const clickEvent = () => {
     const { clickEvent, btnName } = props;
     clickEvent(btnName);
   };
-
+  const { className, btnName } = props;
   return (<button className={className} type="button" onClick={clickEvent}>{btnName}</button>);
 }
 
