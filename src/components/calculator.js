@@ -1,28 +1,98 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import calculate from '../logic/caculate';
 
-class CreateDigits extends React.Component {
+class Buttons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.clickEvent = this.clickEvent.bind(this);
+  }
+
+  clickEvent() {
+    const { clickEvent, btnName } = this.props;
+    clickEvent(btnName);
+  }
+
   render() {
-    const digits = [];
-    for (let i = 1; i < 10; i += 1) {
-      digits.push(
-        <button type="submit" key={i}>{i}</button>,
-      );
-    }
-    return digits;
+    const { className, btnName } = this.props;
+    return (<button className={className} type="button" onClick={this.clickEvent}>{btnName}</button>);
   }
 }
 
-function calculator() {
+Buttons.propTypes = {
+  btnName: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  clickEvent: PropTypes.func.isRequired,
+};
+
+Buttons.defaultProps = {
+  className: 'button',
+};
+
+function Display(props) {
+  const {
+    previous, current, operand,
+  } = props;
+
+  return (
+    <div className="display">
+      <span className="previous">{previous}</span>
+      <span className="operand">{operand}</span>
+      <span className="current">{current}</span>
+    </div>
+  );
+}
+
+Display.propTypes = {
+  previous: PropTypes.string,
+  current: PropTypes.string,
+  operand: PropTypes.string,
+};
+
+Display.defaultProps = {
+  previous: '',
+  operand: '',
+  current: '0',
+};
+
+function Calculator(props) {
+  const {
+    previous, operand, current,
+  } = props;
+  const [total, setTotal] = useState(previous);
+  const [operation, setOperation] = useState(operand);
+  const [next, setNext] = useState(current);
+
+  const update = (btnClick) => {
+    const obj = calculate({
+      total,
+      operation,
+      next,
+    }, btnClick);
+    setTotal(obj.total);
+    setOperation(obj.operation);
+    setNext(obj.next);
+  };
+
+  const CreateDigits = () => {
+    const digits = [];
+    for (let i = 1; i < 10; i += 1) {
+      digits.push(<Buttons btnName={i.toString()} clickEvent={(string) => update(string)} />);
+    }
+    return digits;
+  };
+
   return (
     <div className="calculator">
       <div className="display">
-        <span>0</span>
+        <Display previous={total} operand={operation} current={next} />
       </div>
 
       <div className="transform">
-        <button type="button">AC</button>
-        <button type="button">+/-</button>
-        <button type="button">%</button>
+        <Buttons btnName="AC" clickEvent={(string) => update(string)} />
+        <Buttons btnName="+" clickEvent={(string) => update(string)} />
+        <Buttons btnName="+/-" clickEvent={(string) => update(string)} />
       </div>
 
       <div className="digits">
@@ -30,19 +100,31 @@ function calculator() {
       </div>
 
       <div className="zero_digits">
-        <button type="button" className="zero">0</button>
-        <button type="button" className="point">.</button>
+        <Buttons className="zero" btnName="0" clickEvent={(string) => update(string)} />
+        <Buttons className="point" btnName="." clickEvent={(string) => update(string)} />
       </div>
 
       <div className="operators">
-        <button type="button">&#xF7;</button>
-        <button type="button">*</button>
-        <button type="button">-</button>
-        <button type="button">+</button>
-        <button type="button">=</button>
+        <Buttons btnName="&#xF7;" clickEvent={(string) => update(string)} />
+        <Buttons btnName="x" clickEvent={(string) => update(string)} />
+        <Buttons btnName="-" clickEvent={(string) => update(string)} />
+        <Buttons btnName="+" clickEvent={(string) => update(string)} />
+        <Buttons btnName="=" clickEvent={(string) => update(string)} />
       </div>
     </div>
   );
 }
 
-export default calculator;
+Calculator.propTypes = {
+  previous: PropTypes.string,
+  operand: PropTypes.string,
+  current: PropTypes.string,
+};
+
+Calculator.defaultProps = {
+  previous: '',
+  operand: '',
+  current: '0',
+};
+
+export default Calculator;
