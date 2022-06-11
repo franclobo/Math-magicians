@@ -78,7 +78,9 @@ function Calculator(props) {
   const CreateDigits = () => {
     const digits = [];
     for (let i = 1; i < 10; i += 1) {
-      digits.push(<Buttons btnName={i.toString()} clickEvent={(string) => update(string)} />);
+      digits.push(
+        <Buttons key={i} btnName={i.toString()} clickEvent={(string) => update(string)} />,
+      );
     }
     return digits;
   };
