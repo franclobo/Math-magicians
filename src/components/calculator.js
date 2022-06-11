@@ -2,22 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import calculate from '../logic/caculate';
 
-class Buttons extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.clickEvent = this.clickEvent.bind(this);
-  }
+function Buttons(props) {
+  const { className, btnName } = props;
 
-  clickEvent() {
-    const { clickEvent, btnName } = this.props;
+  const clickEvent = (props) => {
+    const { clickEvent, btnName } = props;
     clickEvent(btnName);
-  }
+  };
 
-  render() {
-    const { className, btnName } = this.props;
-    return (<button className={className} type="button" onClick={this.clickEvent}>{btnName}</button>);
-  }
+  return (<button className={className} type="button" onClick={clickEvent}>{btnName}</button>);
 }
 
 Buttons.propTypes = {
@@ -60,7 +53,7 @@ function Calculator(props) {
   const {
     previous, operand, current,
   } = props;
-  const [total, setTotal] = useState(previous);
+  const [total, setTotal] = useState(previous); // useState is a Hook
   const [operation, setOperation] = useState(operand);
   const [next, setNext] = useState(current);
 
