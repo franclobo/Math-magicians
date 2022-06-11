@@ -1,53 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import calculate from '../logic/caculate';
+import Buttons from './buttons';
+import Display from './display';
 
-function Buttons(props) {
-  const clickEvent = () => {
-    const { clickEvent, btnName } = props;
-    clickEvent(btnName);
-  };
-  const { className, btnName } = props;
-  return (<button className={className} type="button" onClick={clickEvent}>{btnName}</button>);
-}
-
-Buttons.propTypes = {
-  btnName: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  clickEvent: PropTypes.func.isRequired,
-};
-
-Buttons.defaultProps = {
-  className: 'button',
-};
-
-function Display(props) {
-  const {
-    previous, current, operand,
-  } = props;
-
-  return (
-    <div className="display">
-      <span className="previous">{previous}</span>
-      <span className="operand">{operand}</span>
-      <span className="current">{current}</span>
-    </div>
-  );
-}
-
-Display.propTypes = {
-  previous: PropTypes.string,
-  current: PropTypes.string,
-  operand: PropTypes.string,
-};
-
-Display.defaultProps = {
-  previous: '',
-  operand: '',
-  current: '0',
-};
-
-function Calculator(props) {
+export default function Calculator(props) {
   const {
     previous, operand, current,
   } = props;
@@ -119,5 +76,3 @@ Calculator.defaultProps = {
   operand: '',
   current: '0',
 };
-
-export default Calculator;
