@@ -2,8 +2,8 @@ import React from 'react';
 
 function Home() {
   return (
-    <body>
-      <h2>Welcome to our page!</h2>
+    <body className="home">
+      <h2 className="titleHome">Welcome to our page!</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Ipsum dicta eos eaque praesentium quam autem, neque nostrum!

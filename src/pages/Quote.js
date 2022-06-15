@@ -2,7 +2,7 @@ import React from 'react';
 
 function Quote() {
   return (
-    <body>
+    <body className="quote">
       <h3>
         Mathematics is not about numbers, equations, computations,
         {' '}

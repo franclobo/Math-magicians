@@ -4,10 +4,10 @@ import {
   Routes,
   NavLink,
 } from 'react-router-dom';
-import CalculatorPage from './pages/Calculator';
 import Home from './pages/Home';
 import Quote from './pages/Quote';
-import './pages/'
+import styles from './pages/pages.module.css';
+import CalculatorPage from './pages/CalculatorPage';
 
 function App() {
   const links = [
@@ -18,19 +18,19 @@ function App() {
     },
     {
       id: 2,
-      path: '/calculator',
+      path: '/calculatorpage',
       text: 'Calculator',
     },
     {
-      id: 2,
+      id: 3,
       path: '/quote',
       text: 'Quote',
     },
   ];
   return (
     <>
-      <header>
-        <h1>Math Magicians</h1>
+      <header className={styles.header}>
+        <h1 className="title">Math Magicians</h1>
         <nav className="navBar">
           <ul className="menuNav">
             {links.map((link) => (
@@ -47,10 +47,10 @@ function App() {
         <Route
           exact
           path="/"
-          element={<Home className="home" />}
+          element={<Home />}
         />
         <Route
-          path="/calcuator"
+          path="/calcuatorpage"
           element={<CalculatorPage />}
         />
         <Route
