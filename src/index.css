@@ -105,3 +105,44 @@ button:hover {
   font-weight: 700;
   width: 100px;
 }
+
+/* pages styles */
+.home,
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20vh;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.titleHome {
+  padding: 20px;
+}
+
+.menuNav {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.calculatorPage {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  padding: 15vh 0;
+}
