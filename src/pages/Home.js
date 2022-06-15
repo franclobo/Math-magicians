@@ -2,7 +2,7 @@ import React from 'react';
 
 function Home() {
   return (
-    <body className="home">
+    <div className="home">
       <h2 className="titleHome">Welcome to our page!</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -15,7 +15,7 @@ function Home() {
         Ipsum dicta eos eaque praesentium quam autem, neque nostrum!
         Ut eum iste nulla ullam amet harum consequatur libero, hic cum error dolor!
       </p>
-    </body>
+    </div>
   );
 }
 

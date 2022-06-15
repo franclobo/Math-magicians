@@ -1,12 +1,16 @@
 import React from 'react';
+import Calculator from '../components/calculator';
 
 function CalculatorPage() {
   return (
-    <body>
+    <div className="calculatorPage">
       <h2>
-        <p>Let&apos;s do some math!</p>
+        <p>Lets do some math!</p>
       </h2>
-    </body>
+      <div>
+        <Calculator previous="" operand="" current="0" solved={false} />
+      </div>
+    </div>
   );
 }
 
