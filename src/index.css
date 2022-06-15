@@ -113,7 +113,11 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 40px;
+  padding: 20vh;
+}
+
+.title {
+  font-size: 50px;
 }
 
 .titleHome {
@@ -125,6 +129,8 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 2px;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -138,5 +144,5 @@ a {
   display: flex;
   justify-content: space-around;
   align-content: center;
-  padding: 40px;
+  padding: 15vh 0;
 }
