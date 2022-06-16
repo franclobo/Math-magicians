@@ -35,4 +35,4 @@ describe('TEst operate function', () => {
     const result = operate(12, 0, '%');
     expect(result).toBe('Can\'t find modulo as can\'t divide by 0.');
   });
-})
+});

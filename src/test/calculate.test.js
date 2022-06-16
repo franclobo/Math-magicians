@@ -173,4 +173,4 @@ describe('Test calculate function', () => {
       operation: null,
     });
   });
-})
+});
