@@ -46,6 +46,22 @@ Then you can start the server and preview the application using
 
 - LinkedIn: [Francisco Borja](https://www.linkedin.com/in/francisco-borja-lobato/)
 
+👤 **Yilikal Teshome**
+
+- GitHub: [@Yilikal250](https://github.com/githubhandle)
+
+- Twitter: [@@TeshomeYilikal](https://twitter.com/twitterhandle)
+
+- LinkedIn: [teshomeyilikal250@gmail.com](https://linkedin.com/in/linkedinhandle)
+
+👤 **Marco Antonio Hincapié Montes**
+
+- GitHub: [@AntonioHincapie](https://github.com/AntonioHincapie)
+
+- Twitter: [@MarcoHincapie](https://twitter.com/MarcoHincapie)
+
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/marco-hincapi%C3%A9-7a76751a3/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
