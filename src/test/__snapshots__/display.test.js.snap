@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="display"
+>
+  <span
+    className="previous"
+  />
+  <span
+    className="operand"
+  />
+  <span
+    className="current"
+  >
+    0
+  </span>
+</div>
+`;
