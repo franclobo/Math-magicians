@@ -20,7 +20,7 @@ By building this application, I will learn how to use React.
 
 ## Live Demo
 
-[Math magicians](https://franclobo.github.io/Math-magicians/build/)<br>
+[Math magicians deployed with Heroku](https://math-magicians-franclobo.herokuapp.com/)<br>
 
 ## Installation
 
